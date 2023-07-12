@@ -14,15 +14,20 @@ struct HomeView: View {
     var body: some View {
         
         VStack{
-            Text("Prompt of the week")
-                .font(.title2)
             
             
-            
-            Text("🫦")
-                .onTapGesture {
-                    isPopoverShown.toggle()
+            NavigationStack{
+                
+                Text("Prompt of the week")
+                    .font(.title2)
+
+                NavigationLink{
+                    CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
+                } label: {
+                    Text("🫦")
                 }
+            }
+
         }
         .popover(isPresented: $isPopoverShown) {
             
