@@ -23,6 +23,7 @@ struct HomeView: View {
 
                 NavigationLink{
                     CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
+                        .navigationBarBackButtonHidden(true)
                 } label: {
                     Text("🫦")
                 }
