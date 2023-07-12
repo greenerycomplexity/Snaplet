@@ -24,8 +24,12 @@ struct HomeView: View {
                 NavigationLink{
                     CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
                 } label: {
-                    Text("🫦")
+                    Image(systemName: "camera.circle")
+                        .foregroundColor(.red)
+                        .font(.system(size: 40))
                 }
+                
+                
             }
 
         }
