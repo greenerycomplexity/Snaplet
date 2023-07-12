@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		E71E5A822A5CE04E005935F7 /* LuminarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A812A5CE04E005935F7 /* LuminarApp.swift */; };
-		E71E5A842A5CE04E005935F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A832A5CE04E005935F7 /* ContentView.swift */; };
 		E71E5A862A5CE050005935F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71E5A852A5CE050005935F7 /* Assets.xcassets */; };
 		E71E5A892A5CE050005935F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71E5A882A5CE050005935F7 /* Preview Assets.xcassets */; };
+		E71E5A942A5CE339005935F7 /* WelcomeFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A932A5CE339005935F7 /* WelcomeFirst.swift */; };
+		E71E5A982A5CE46D005935F7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A972A5CE46D005935F7 /* HomeView.swift */; };
+		E71E5A9A2A5CEB32005935F7 /* Donkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A992A5CEB32005935F7 /* Donkey.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E71E5A7E2A5CE04E005935F7 /* Luminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E71E5A812A5CE04E005935F7 /* LuminarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuminarApp.swift; sourceTree = "<group>"; };
-		E71E5A832A5CE04E005935F7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E71E5A852A5CE050005935F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E71E5A882A5CE050005935F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		E71E5A932A5CE339005935F7 /* WelcomeFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeFirst.swift; sourceTree = "<group>"; };
+		E71E5A972A5CE46D005935F7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E71E5A992A5CEB32005935F7 /* Donkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donkey.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +56,9 @@
 			isa = PBXGroup;
 			children = (
 				E71E5A812A5CE04E005935F7 /* LuminarApp.swift */,
-				E71E5A832A5CE04E005935F7 /* ContentView.swift */,
+				E71E5A972A5CE46D005935F7 /* HomeView.swift */,
+				E71E5A932A5CE339005935F7 /* WelcomeFirst.swift */,
+				E71E5A992A5CEB32005935F7 /* Donkey.swift */,
 				E71E5A852A5CE050005935F7 /* Assets.xcassets */,
 				E71E5A872A5CE050005935F7 /* Preview Content */,
 			);
@@ -137,7 +143,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E71E5A842A5CE04E005935F7 /* ContentView.swift in Sources */,
+				E71E5A9A2A5CEB32005935F7 /* Donkey.swift in Sources */,
+				E71E5A982A5CE46D005935F7 /* HomeView.swift in Sources */,
+				E71E5A942A5CE339005935F7 /* WelcomeFirst.swift in Sources */,
 				E71E5A822A5CE04E005935F7 /* LuminarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -267,13 +275,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Luminar/Preview Content\"";
+				DEVELOPMENT_TEAM = 876S4LM4HW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,13 +304,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Luminar/Preview Content\"";
+				DEVELOPMENT_TEAM = 876S4LM4HW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
