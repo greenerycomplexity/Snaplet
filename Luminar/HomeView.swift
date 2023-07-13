@@ -9,19 +9,21 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var isPopoverShown:Bool = false
+    @State private var isPopoverShown:Bool = true
+    let homeGradientColors = [Color("ponyPink"), Color("babyBlue")]
     
     
     var body: some View {
         NavigationStack{
             ZStack{
-                Image("home_gradient")
-                    .resizable()
-                    .edgesIgnoringSafeArea(.all)
+                //              Background gradient for home view
+                LinearGradient(gradient: Gradient(colors: homeGradientColors), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.vertical)
                 
                 
                 VStack{
                     
+                    //                  First image
                     Image("starbucks_example")
                         .resizable()
                         .cornerRadius(15.0)
@@ -32,6 +34,7 @@ struct HomeView: View {
                     
                     Spacer()
                     
+                    //                  Shown weekly prompt, with camera icon in the back
                     ZStack{
                         
                         Image(systemName: "camera")
@@ -47,7 +50,7 @@ struct HomeView: View {
                     Spacer()
                     
                     
-                    
+                    //                    Second image
                     Image("breakfast_example")
                         .resizable()
                         .cornerRadius(15.0)
@@ -56,29 +59,30 @@ struct HomeView: View {
                         .offset(x: -95, y:15)
                     
                     
-                    
-                    
                     Spacer()
                     
                     
+                    //                    Move to camera view
                     NavigationLink{
                         CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
                             .navigationBarBackButtonHidden(true)
                             .preferredColorScheme(.dark)
-                    }label: {
-                        Image("start_button_home")
-                            .scaleEffect(0.8)
-                            .padding(.horizontal,5)
-                            .background(Color("ponyPink"))
-                            .clipShape(RoundedRectangle(cornerRadius: 20))
-                        
-                    }.padding(.top,2.0)
+                    }
+                    //                    Have image of Start text as label for nav button
+                label: {
+                    Image("start_button_home")
+                        .scaleEffect(0.8)
+                        .padding(.horizontal,5)
+                        .background(Color("ponyPink"))
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
                     
+                }.padding(.top,2.0)
                     
                     
                 }
                 
             }
+            
             .popover(isPresented: $isPopoverShown) {
                 
                 WelcomeFirst(isPopoverShown: $isPopoverShown)
