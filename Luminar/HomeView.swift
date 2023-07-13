@@ -9,8 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var isPopoverShown:Bool = true
-    @State private var animationAmount = 1.0
+    @State private var isPopoverShown:Bool = false
     
     
     var body: some View {
@@ -57,33 +56,24 @@ struct HomeView: View {
                         .offset(x: -95, y:15)
                     
                     
-                        .animation(.interpolatingSpring(stiffness: 50, damping: 1).repeatForever(autoreverses: true), value: animationAmount)
-                    
-                    
-                        .onAppear{
-                            animationAmount = 2.0
-                        }
-                    
-                    
-                    
-                    
                     
                     
                     Spacer()
                     
-                    HStack{
-                        NavigationLink ("Start"){
-                            CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
-                                .navigationBarBackButtonHidden(true)
-                                .preferredColorScheme(.dark)
-                        } .buttonStyle(AccentButton())
+                    
+                    NavigationLink{
+                        CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
+                            .navigationBarBackButtonHidden(true)
+                            .preferredColorScheme(.dark)
+                    }label: {
+                        Image("start_button_home")
+                            .scaleEffect(0.8)
+                            .padding(.horizontal,5)
+                            .background(Color("ponyPink"))
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
                         
-                        
-                        NavigationLink ("Contacts"){
-                            ContactsView()
-                                .preferredColorScheme(.dark)
-                        } .buttonStyle(AccentButton())
-                    }
+                    }.padding(.top,2.0)
+                    
                     
                     
                 }
@@ -100,16 +90,6 @@ struct HomeView: View {
     
 }
 
-
-struct AccentButton: ButtonStyle {
-    func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .padding()
-            .background(Color("ponyPink"))
-            .foregroundStyle(.white)
-            .clipShape(Capsule())
-    }
-}
 
 struct BouncingView: View {
     @State private var bouncing = false
