@@ -9,9 +9,12 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var isPopoverShown:Bool = true
-    let homeGradientColors = [Color("ponyPink"), Color("babyBlue")]
+    //    Store whether it is the first time the user opens the app
+    //    and present the popover accordingly
+    @AppStorage("isFirstTime") var isFirstTime: Bool = true
+    @State private var isPopoverShown:Bool = false
     
+    let homeGradientColors = [Color("ponyPink"), Color("babyBlue")]
     
     var body: some View {
         NavigationStack{
@@ -86,6 +89,14 @@ struct HomeView: View {
             .popover(isPresented: $isPopoverShown) {
                 
                 WelcomeFirst(isPopoverShown: $isPopoverShown)
+            }
+            
+            //            If it's the first time user opens app, show popover, and remember state of var isFirstTime
+            .onAppear{
+                if isFirstTime {
+                    isPopoverShown = true
+                    isFirstTime = false
+                }
             }
             
         }
