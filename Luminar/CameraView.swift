@@ -1,6 +1,5 @@
 //
 //  CameraView.swift
-//  CameraTutorial2
 //
 //  Created by Lewis Watson on 7/7/2023.
 //
@@ -22,6 +21,9 @@ struct CameraView: UIViewControllerRepresentable {
         let viewController = UIViewControllerType()
         viewController.delegate = context.coordinator
         viewController.sourceType = .camera
+
+
+        
         return viewController
     }
     
@@ -40,6 +42,7 @@ extension CameraView {
         
         init(_ parent: CameraView) {
             self.parent = parent
+
         }
 
         
