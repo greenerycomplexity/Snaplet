@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		74C5F44F2A6033B700F5D94F /* ThoughtBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5F44E2A6033B700F5D94F /* ThoughtBubbleView.swift */; };
 		A5ED46C82A5E49A7000046FE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46C72A5E49A6000046FE /* CameraView.swift */; };
 		A5ED46EA2A5FAC76000046FE /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46E92A5FAC76000046FE /* ContactsView.swift */; };
 		A5ED46EC2A5FAC8E000046FE /* ProfilePictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46EB2A5FAC8E000046FE /* ProfilePictures.swift */; };
@@ -19,6 +20,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		74C5F44E2A6033B700F5D94F /* ThoughtBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtBubbleView.swift; sourceTree = "<group>"; };
 		A5ED46C72A5E49A6000046FE /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		A5ED46E92A5FAC76000046FE /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A5ED46EB2A5FAC8E000046FE /* ProfilePictures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePictures.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 			children = (
 				E71E5A812A5CE04E005935F7 /* LuminarApp.swift */,
 				E71E5A972A5CE46D005935F7 /* HomeView.swift */,
+				74C5F44E2A6033B700F5D94F /* ThoughtBubbleView.swift */,
 				E71E5A932A5CE339005935F7 /* WelcomeFirst.swift */,
 				E71E5A992A5CEB32005935F7 /* Donkey.swift */,
 				A5ED46C72A5E49A6000046FE /* CameraView.swift */,
@@ -156,6 +159,7 @@
 				E71E5A982A5CE46D005935F7 /* HomeView.swift in Sources */,
 				A5ED46C82A5E49A7000046FE /* CameraView.swift in Sources */,
 				A5ED46EA2A5FAC76000046FE /* ContactsView.swift in Sources */,
+				74C5F44F2A6033B700F5D94F /* ThoughtBubbleView.swift in Sources */,
 				A5ED46EC2A5FAC8E000046FE /* ProfilePictures.swift in Sources */,
 				E71E5A942A5CE339005935F7 /* WelcomeFirst.swift in Sources */,
 				E71E5A822A5CE04E005935F7 /* LuminarApp.swift in Sources */,

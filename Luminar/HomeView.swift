@@ -19,14 +19,14 @@ struct HomeView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                //              Background gradient for home view
+                // Background gradient for home view
                 LinearGradient(gradient: Gradient(colors: homeGradientColors), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.vertical)
                 
                 
                 VStack{
                     
-                    //                  First image
+                    // First image
                     Image("starbucks_example")
                         .resizable()
                         .cornerRadius(15.0)
@@ -37,7 +37,7 @@ struct HomeView: View {
                     
                     Spacer()
                     
-                    //                  Shown weekly prompt, with camera icon in the back
+                    // Shown weekly prompt, with camera icon in the back
                     ZStack{
                         
                         Image(systemName: "camera")
@@ -53,7 +53,7 @@ struct HomeView: View {
                     Spacer()
                     
                     
-                    //                    Second image
+                    // Second image
                     Image("breakfast_example")
                         .resizable()
                         .cornerRadius(15.0)
@@ -65,13 +65,13 @@ struct HomeView: View {
                     Spacer()
                     
                     
-                    //                    Move to camera view
+                    // Move to camera view
                     NavigationLink{
                         CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
                             .navigationBarBackButtonHidden(true)
                             .preferredColorScheme(.dark)
                     }
-                    //                    Have image of Start text as label for nav button
+                    // Have image of Start text as label for nav button
                 label: {
                     Image("start_button_home")
                         .scaleEffect(0.8)
@@ -91,7 +91,8 @@ struct HomeView: View {
                 WelcomeFirst(isPopoverShown: $isPopoverShown)
             }
             
-            //            If it's the first time user opens app, show popover, and remember state of var isFirstTime
+            // If it's the first time user opens app, show popover,
+//            and remember state of var isFirstTime
             .onAppear{
                 if isFirstTime {
                     isPopoverShown = true
@@ -106,17 +107,17 @@ struct HomeView: View {
 }
 
 
-struct BouncingView: View {
-    @State private var bouncing = false
-    var body: some View {
-        Text("Hello, World!")
-            .frame(maxHeight: .infinity, alignment: bouncing ? .bottom : .top)
-            .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true), value: bouncing)
-            .onAppear {
-                self.bouncing.toggle()
-            }
-    }
-}
+//struct BouncingView: View {
+//    @State private var bouncing = false
+//    var body: some View {
+//        Text("Hello, World!")
+//            .frame(maxHeight: .infinity, alignment: bouncing ? .bottom : .top)
+//            .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true), value: bouncing)
+//            .onAppear {
+//                self.bouncing.toggle()
+//            }
+//    }
+//}
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
