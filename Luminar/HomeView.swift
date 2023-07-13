@@ -9,14 +9,17 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @State private var isPopoverShown:Bool = false
+    @State private var isPopoverShown:Bool = true
     @State private var animationAmount = 1.0
     
     
     var body: some View {
         NavigationStack{
             ZStack{
-                Color("creamyCream").ignoresSafeArea()
+                Image("home_gradient")
+                    .resizable()
+                    .edgesIgnoringSafeArea(.all)
+                
                 
                 VStack{
                     
@@ -25,23 +28,34 @@ struct HomeView: View {
                         .cornerRadius(15.0)
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 250, height: 250)
-                        .offset(x: 50, y:15)
+                        .offset(x: 80, y:15)
                     
                     
                     Spacer()
                     
-                    Text("Prompt of the week")
-                        .font(.title2)
-                        .bold()
+                    ZStack{
+                        
+                        Image(systemName: "camera")
+                            .font(.system(size: 130))
+                            .foregroundColor(Color("navyBlue"))
+                            .offset(x: -60, y: -20)
+                        Image("morningMood_text")
+                            .scaleEffect(1)
+                            .offset(x: 50, y:50)
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    
                     
                     Image("breakfast_example")
                         .resizable()
                         .cornerRadius(15.0)
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 250, height: 250)
-                        .offset(x: -50, y:15)
+                        .frame(width: 250, height: 230)
+                        .offset(x: -95, y:15)
                     
-                    //                        .scaleEffect(animationAmount)
                     
                         .animation(.interpolatingSpring(stiffness: 50, damping: 1).repeatForever(autoreverses: true), value: animationAmount)
                     
