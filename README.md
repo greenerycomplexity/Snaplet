@@ -4,6 +4,10 @@ An app designed as part of the Apple Foundation Program 2023 - June cohort, from
 
 ## Members' contributions
 
-### :star2:  Mason Cao  :star2:
+### :star2: Hai Son (Mason) Cao  :star2:
 - Welcome/Onboarding view
-- Mainscreen View
+- Home View
+
+### :star2: Lewis Watson  :star2:
+- Camera view
+- Contacts view
