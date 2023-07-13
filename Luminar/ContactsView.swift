@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct ContactsView: View {
     
     private static let size: CGFloat = 100
     private static let spacingBetweenColumns: CGFloat = 25
@@ -69,6 +69,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContactsView()
     }
 }

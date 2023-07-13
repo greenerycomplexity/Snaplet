@@ -11,7 +11,7 @@ struct HomeView: View {
     
     @State private var isPopoverShown:Bool = false
     @State private var animationAmount = 1.0
-
+    
     
     var body: some View {
         NavigationStack{
@@ -41,27 +41,35 @@ struct HomeView: View {
                         .frame(width: 250, height: 250)
                         .offset(x: -50, y:15)
                     
-//                        .scaleEffect(animationAmount)
-                
+                    //                        .scaleEffect(animationAmount)
+                    
                         .animation(.interpolatingSpring(stiffness: 50, damping: 1).repeatForever(autoreverses: true), value: animationAmount)
-
+                    
                     
                         .onAppear{
                             animationAmount = 2.0
                         }
                     
                     
-    
+                    
                     
                     
                     
                     Spacer()
                     
-                    NavigationLink ("Start"){
-                        CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
-                            .navigationBarBackButtonHidden(true)
-                            .preferredColorScheme(.dark)
-                    } .buttonStyle(AccentButton())
+                    HStack{
+                        NavigationLink ("Start"){
+                            CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
+                                .navigationBarBackButtonHidden(true)
+                                .preferredColorScheme(.dark)
+                        } .buttonStyle(AccentButton())
+                        
+                        
+                        NavigationLink ("Contacts"){
+                            ContactsView()
+                                .preferredColorScheme(.dark)
+                        } .buttonStyle(AccentButton())
+                    }
                     
                     
                 }
