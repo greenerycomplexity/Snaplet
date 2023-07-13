@@ -48,6 +48,7 @@ struct HomeView: View {
                     NavigationLink ("Start"){
                         CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
                             .navigationBarBackButtonHidden(true)
+                            .preferredColorScheme(.dark)
                     } .buttonStyle(AccentButton())
                     
                     

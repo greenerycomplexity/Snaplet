@@ -40,8 +40,8 @@ extension CameraView {
         
         init(_ parent: CameraView) {
             self.parent = parent
-            //print("here 1")
         }
+
         
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
             // insert here and replace the print to go back to the previous screen
