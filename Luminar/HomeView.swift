@@ -27,12 +27,12 @@ struct HomeView: View {
                 VStack{
                     
                     // First image
-                    Image("starbucks_example")
+                    Image("toddler_mess_img")
                         .resizable()
                         .cornerRadius(15.0)
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 250, height: 250)
-                        .offset(x: 80, y:15)
+                        .frame(width: 250, height: 200)
+                        .offset(x: 60, y:15)
                     
                     
                     Spacer()
