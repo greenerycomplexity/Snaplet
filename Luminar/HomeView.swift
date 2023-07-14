@@ -78,11 +78,18 @@ struct HomeView: View {
                     
                     
                     // Move to camera view
+//                    NavigationLink{
+//                        CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
+//                            .navigationBarBackButtonHidden(true)
+//                            .preferredColorScheme(.dark)
+//                    }
+                    
+//                  Temp nav link to sample contacts view
                     NavigationLink{
-                        CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
-                            .navigationBarBackButtonHidden(true)
+                        ContactsView()
                             .preferredColorScheme(.dark)
                     }
+                    
                     // Have image of Start text as label for nav button
                 label: {
                     Image("start_button_home")
@@ -119,17 +126,17 @@ struct HomeView: View {
 }
 
 
-//struct BouncingView: View {
-//    @State private var bouncing = false
-//    var body: some View {
-//        Text("Hello, World!")
-//            .frame(maxHeight: .infinity, alignment: bouncing ? .bottom : .top)
-//            .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true), value: bouncing)
-//            .onAppear {
-//                self.bouncing.toggle()
-//            }
-//    }
-//}
+struct BouncingView: View {
+    @State private var bouncing = false
+    var body: some View {
+        Text("Hello, World!")
+            .frame(maxHeight: .infinity, alignment: bouncing ? .bottom : .top)
+            .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true), value: bouncing)
+            .onAppear {
+                self.bouncing.toggle()
+            }
+    }
+}
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
