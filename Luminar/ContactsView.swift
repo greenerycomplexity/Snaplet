@@ -55,6 +55,10 @@ struct ContactsView: View {
                                     x: offsetX(value),
                                     y: 0
                                 )
+                                .onTapGesture {
+                                    // this here is where you would put a navigation link or something else to move to the next page using the value below (0-9) to relate to the face selected
+                                    print("single press \(value%profilePictures.count)")
+                                }
                         }
                         // You need to add height
                         .frame(
