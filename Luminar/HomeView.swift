@@ -27,12 +27,18 @@ struct HomeView: View {
                 VStack{
                     
                     // First image
-                    Image("toddler_mess_img")
-                        .resizable()
-                        .cornerRadius(15.0)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 250, height: 200)
-                        .offset(x: 60, y:15)
+                    ZStack{
+                        Image("toddler_mess_img")
+                            .resizable()
+                            .cornerRadius(15.0)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 250, height: 200)
+                            .offset(x: 80, y:15)
+                        
+                        ThoughtBubbleView(comment: "What a mess! 🤣🤣", mirrored: true)
+                            .offset(x: -20)
+                    }
+                  
                     
                     
                     Spacer()
@@ -54,13 +60,19 @@ struct HomeView: View {
                     
                     
                     // Second image
-                    Image("breakfast_example")
-                        .resizable()
-                        .cornerRadius(15.0)
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 250, height: 230)
-                        .offset(x: -95, y:15)
-                    
+                    ZStack{
+                        Image("breakfast_example")
+                            .resizable()
+                            .cornerRadius(15.0)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 250, height: 230)
+                            .offset(x: -95, y:15)
+                        
+                        ThoughtBubbleView(comment: "Yummy yummy breakfast ❤️")
+                            .offset(x:-18, y: 20)
+                            .scaleEffect(1.2)
+                    }
+                   
                     
                     Spacer()
                     
