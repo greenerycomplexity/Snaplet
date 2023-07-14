@@ -12,11 +12,14 @@ struct WelcomeFirst: View {
     
     @Binding var isPopoverShown:Bool
     
+    @State var isOn = false
+    
     var body: some View {
         
         
         VStack{
             NavigationStack{
+                Spacer()
                 
                 Image(systemName: "sun.haze")
                     .scaledToFit()
@@ -26,6 +29,10 @@ struct WelcomeFirst: View {
                 
                 Text("Welcome to Luminar!")
                     .font(.title2)
+                Spacer()
+                Text("Request camera permission:")
+                Toggle("Camera", isOn: $isOn)
+                    .padding()
                 
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
