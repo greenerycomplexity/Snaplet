@@ -67,6 +67,13 @@ struct ContactsView: View {
                     }
                 }
             }
+            Image("start_button_home")
+                .scaleEffect(0.8)
+                .padding(.horizontal,5)
+                .background(Color("ponyPink"))
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+            .padding(.top,2.0)
+            .offset(y: 350)
         }
     }
 
