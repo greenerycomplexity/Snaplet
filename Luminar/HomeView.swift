@@ -16,6 +16,8 @@ struct HomeView: View {
     
     let homeGradientColors = [Color("ponyPink"), Color("babyBlue")]
     
+    @State var floating1 = 10.0
+    
     var body: some View {
         NavigationStack{
             ZStack{
@@ -33,12 +35,17 @@ struct HomeView: View {
                             .cornerRadius(15.0)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 250, height: 200)
-                            .offset(x: 80, y:15)
+                            .offset(x: 80, y: floating1)
+                            .onAppear {
+                                withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
+                                     floating1 = 5
+                                }
+                            }
                         
                         ThoughtBubbleView(comment: "What a mess! 🤣🤣", mirrored: true)
                             .offset(x: -20)
                     }
-                  
+                    
                     
                     
                     Spacer()
@@ -72,29 +79,24 @@ struct HomeView: View {
                             .offset(x:-18, y: 20)
                             .scaleEffect(1.2)
                     }
-                   
+                    
                     
                     Spacer()
                     
                     
                     // Move to camera view
-//                    NavigationLink{
-//                        CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
-//                            .navigationBarBackButtonHidden(true)
-//                            .preferredColorScheme(.dark)
-//                    }
-                    
-//                  Temp nav link to sample contacts view
                     NavigationLink{
-                        ContactsView()
+                        CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
+                            .navigationBarBackButtonHidden(true)
                             .preferredColorScheme(.dark)
                     }
-                    
+
                     // Have image of Start text as label for nav button
                 label: {
                     Image("start_button_home")
                         .scaleEffect(0.8)
-                        .padding(.horizontal,5)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal,40)
                         .background(Color("ponyPink"))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     
@@ -111,7 +113,7 @@ struct HomeView: View {
             }
             
             // If it's the first time user opens app, show popover,
-//            and remember state of var isFirstTime
+            //            and remember state of var isFirstTime
             .onAppear{
                 if isFirstTime {
                     isPopoverShown = true
