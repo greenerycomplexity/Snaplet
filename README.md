@@ -1,6 +1,7 @@
-# Luminar
+# Snaplet
 An app designed as part of the Apple Foundation Program 2023 - June cohort, from Team Luminar
 
+### Summary TBA
 
 ## Members' contributions
 

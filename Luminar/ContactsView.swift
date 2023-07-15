@@ -58,6 +58,8 @@ struct ContactsView: View {
                                 .onTapGesture {
                                     // this here is where you would put a navigation link or something else to move to the next page using the value below (0-9) to relate to the face selected
                                     print("single press \(value%profilePictures.count)")
+                                    //Navigation link here
+
                                 }
                         }
                         // You need to add height
@@ -67,6 +69,13 @@ struct ContactsView: View {
                     }
                 }
             }
+            Image("start_button_home")
+                .scaleEffect(0.8)
+                .padding(.horizontal,5)
+                .background(Color("ponyPink"))
+                .clipShape(RoundedRectangle(cornerRadius: 20))
+            .padding(.top,2.0)
+            .offset(y: 350)
         }
     }
 
