@@ -16,7 +16,7 @@ struct ThoughtBubbleView: View {
     var circle_offset_x: CGFloat = 12
     var bubble_offset_x: CGFloat = 92
     
-    @State var showBubble1 = false
+    @State var bubble1Opacity = 0.0
     @State var bubble2Opacity = 0.0
     @State var contentOpacity = 0.0
     
@@ -25,7 +25,7 @@ struct ThoughtBubbleView: View {
             Circle()
                 .fill(Color("creamyCream"))
                 .frame(width: 10)
-                .opacity(showBubble1 ? 1 : 0)
+                .opacity(bubble1Opacity)
 
             Circle()
                 .fill(Color("creamyCream"))
@@ -50,13 +50,13 @@ struct ThoughtBubbleView: View {
             .opacity(contentOpacity)
             
         }.onAppear {
-            withAnimation(.spring().speed(2)) {
-                showBubble1 = true
+            withAnimation(.easeIn(duration: 1).delay(1)) {
+                bubble1Opacity = 1
             }
-            withAnimation(.easeIn(duration: 1)) {
+            withAnimation(.easeIn(duration: 1).delay(2)) {
                 bubble2Opacity = 1
             }
-            withAnimation(.easeInOut(duration: 1)) {
+            withAnimation(.easeIn(duration: 1).delay(3.5)) {
                 contentOpacity = 1
             }
         }
