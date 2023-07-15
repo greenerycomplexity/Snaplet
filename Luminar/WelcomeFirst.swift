@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AVFoundation
 
 struct WelcomeFirst: View {
     
@@ -30,9 +31,6 @@ struct WelcomeFirst: View {
                 Text("Welcome to Luminar!")
                     .font(.title2)
                 Spacer()
-                Text("Request camera permission:")
-                Toggle("Camera", isOn: $isOn)
-                    .padding()
                 
                     .toolbar {
                         ToolbarItemGroup(placement: .bottomBar) {
@@ -53,6 +51,15 @@ struct WelcomeFirst: View {
             }
             
             
+        }.onAppear {
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
+                    if response {
+                        //access granted
+                        
+                    } else {
+
+                    }
+                }
         }
         
         
