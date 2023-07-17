@@ -10,16 +10,19 @@ import AVFoundation
 
 struct WelcomeFirst: View {
     
+    let welcomeGradientColors = [Color("ponyPink"), Color("creamyCream")]
+    
     
     @Binding var isPopoverShown:Bool
-    
     @State var isOn = false
     
     var body: some View {
-        
-        
-        VStack{
-            NavigationStack{
+        NavigationStack{
+        ZStack{
+            LinearGradient(gradient: Gradient(colors: welcomeGradientColors), startPoint: .top, endPoint: .bottom)
+                .edgesIgnoringSafeArea(.vertical)
+            VStack{
+                
                 Spacer()
                 
                 Image(systemName: "sun.haze")
@@ -30,6 +33,7 @@ struct WelcomeFirst: View {
                 
                 Text("Welcome to Luminar!")
                     .font(.title2)
+                    .foregroundColor(.black)
                 Spacer()
                 
                     .toolbar {
@@ -38,7 +42,7 @@ struct WelcomeFirst: View {
                                 isPopoverShown = false
                             }
                             NavigationLink{
-                                Donkey(isPopoverShown: $isPopoverShown)
+                                WelcomeSecond(isPopoverShown: $isPopoverShown)
                                 
                             }label: {
                                 Text("Next")
@@ -50,6 +54,14 @@ struct WelcomeFirst: View {
                 
             }
             
+            
+        }
+        
+        
+        
+
+            
+        
             
         }.onAppear {
             AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
