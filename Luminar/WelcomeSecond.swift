@@ -62,7 +62,7 @@ struct WelcomeSecond: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WelcomeSecond_Previews: PreviewProvider {
     static var previews: some View {
         WelcomeSecond(isPopoverShown: .constant(true))
     }
