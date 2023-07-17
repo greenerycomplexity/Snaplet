@@ -16,7 +16,9 @@ struct HomeView: View {
     
     let homeGradientColors = [Color("ponyPink"), Color("babyBlue")]
     
-    @State var floating1 = 10.0
+    @State var floating1 = 15.0
+    @State var image1Opacity = 0.0
+    @State var image2Opacity = 0.0
     
     var body: some View {
         NavigationStack{
@@ -35,11 +37,16 @@ struct HomeView: View {
                             .cornerRadius(15.0)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 250, height: 200)
+                            .glow(color: Color("creamyCream"),radius: 30)
                             .offset(x: 80, y: floating1)
                             .onAppear {
-                                withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
-                                     floating1 = 5
+
+                                withAnimation(.easeIn(duration: 1).repeatForever(autoreverses: true)) {
+                                     floating1 = 17
+
                                 }
+                                
+                                
                             }
                         
                         ThoughtBubbleView(comment: "What a mess! 🤣🤣", mirrored: true)
@@ -61,7 +68,7 @@ struct HomeView: View {
                             .scaleEffect(1)
                             .offset(x: 50, y:50)
                         
-                    }
+                    }.animation(nil)
                     
                     Spacer()
                     
@@ -73,7 +80,13 @@ struct HomeView: View {
                             .cornerRadius(15.0)
                             .aspectRatio(contentMode: .fit)
                             .frame(width: 250, height: 230)
+                            .glow(color: Color("creamyCream"),radius: 15)
                             .offset(x: -95, y:15)
+//                            .onAppear {
+//                                withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
+//                                     floating1 = 15
+//                                }
+//                            }
                         
                         ThoughtBubbleView(comment: "Yummy yummy breakfast ❤️")
                             .offset(x:-18, y: 20)
@@ -127,18 +140,14 @@ struct HomeView: View {
     
 }
 
+extension View {
+    func glow(color: Color = .black, radius: CGFloat = 20) -> some View {
+        self
+            .shadow(color: color, radius: radius / 3)
 
-struct BouncingView: View {
-    @State private var bouncing = false
-    var body: some View {
-        Text("Hello, World!")
-            .frame(maxHeight: .infinity, alignment: bouncing ? .bottom : .top)
-            .animation(Animation.easeInOut(duration: 5.0).repeatForever(autoreverses: true), value: bouncing)
-            .onAppear {
-                self.bouncing.toggle()
-            }
     }
 }
+
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView()
