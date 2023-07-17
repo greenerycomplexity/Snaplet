@@ -12,7 +12,13 @@ struct ContactsView: View {
     private static let spacingBetweenColumns: CGFloat = 1
     private static let spacingBetweenRows: CGFloat = 1
     private static let totalColumns: Int = 6
-
+    
+    //background colour - gradient
+    let backColours = [
+        Color("ponyPink"),
+        Color("babyBlue")
+    ]
+    
     let gridItems = Array(
         repeating: GridItem(
             .fixed(size),
@@ -21,166 +27,169 @@ struct ContactsView: View {
         ),
         count: totalColumns
     )
-
+    
     var body: some View {
-        ZStack {
-            
-            //background colour - gradient
-            let backColours = [
-                        Color("ponyPink"),
-                        //Color("navyBlue"),
-                        Color("babyBlue"),
-            ]
-            LinearGradient(gradient: Gradient(colors: backColours), startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea([.all])
-            
-            ScrollView([.horizontal, .vertical], showsIndicators: false) {
-                LazyVGrid(
-                    columns: gridItems,
-                    alignment: .center,
-                    spacing: Self.spacingBetweenRows
-                ) {
-                    ForEach(0..<50) { value in
-                        GeometryReader { proxy in
-                            Image(profileName(value))
-                                .resizable()
-                                .cornerRadius(Self.size/2)
-                                .scaleEffect(
-                                    scale(
-                                        proxy: proxy,
-                                        value: value
+        NavigationStack{
+            ZStack {
+                
+                
+                LinearGradient(gradient: Gradient(colors: backColours), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea([.all])
+                
+                ScrollView([.horizontal, .vertical], showsIndicators: false) {
+                    LazyVGrid(
+                        columns: gridItems,
+                        alignment: .center,
+                        spacing: Self.spacingBetweenRows
+                    ) {
+                        ForEach(0..<50) { value in
+                            GeometryReader { proxy in
+                                Image(profileName(value))
+                                    .resizable()
+                                    .cornerRadius(Self.size/2)
+                                    .scaleEffect(
+                                        scale(
+                                            proxy: proxy,
+                                            value: value
+                                        )
                                     )
-                                )
-                                .offset(
-                                    x: offsetX(value),
-                                    y: 0
-                                )
-                                .onTapGesture {
-                                    // this here is where you would put a navigation link or something else to move to the next page using the value below (0-9) to relate to the face selected
+                                    .offset(
+                                        x: offsetX(value),
+                                        y: 0
+                                    )
+                                    .onTapGesture {
+                                        // this here is where you would put a navigation link or something else to move to the next page using the value below (0-9) to relate to the face selected
                                     print("single press \(value%profilePictures.count)")
-                                    //Navigation link here
-
-                                }
+                                        //Navigation link here
+                                        
+                                    }
+                            }
+                            // You need to add height
+                            .frame(
+                                height: Self.size
+                            )
                         }
-                        // You need to add height
-                        .frame(
-                            height: Self.size
-                        )
                     }
                 }
+                
+                
+                NavigationLink{
+                    TemplateView()
+                }label: {
+                    Image("continue_text")
+                        .scaleEffect(0.8)
+                        .padding(.vertical, 5)
+                        .padding(.horizontal,40)
+                        .background(Color("ponyPink"))
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+                    
+                    
+                        .padding(.top,2.0)
+                        .offset(y: 350)
+                    
+                }
+                
+                
             }
-            Image("continue_text")
-                .scaleEffect(0.8)
-                .padding(.vertical, 5)
-                .padding(.horizontal,40)
-                .background(Color("ponyPink"))
-                .clipShape(RoundedRectangle(cornerRadius: 20))
-        
-            
-            .padding(.top,2.0)
-            .offset(y: 350)
-            
-            
-            
             
         }
     }
-
+    
     func offsetX(_ value: Int) -> CGFloat {
         let rowNumber = value / gridItems.count
-
+        
         if rowNumber % 2 == 0 {
             return Self.size/2 + Self.spacingBetweenColumns/2
         }
-
+        
         return 0
     }
-
+    
     func profileName(_ value: Int) -> String {
         profilePictures[value%profilePictures.count]
     }
-
+    
     var center: CGPoint {
         CGPoint(
             x: UIScreen.main.bounds.size.width*0.5,
             y: UIScreen.main.bounds.size.height*0.5
         )
     }
-
+    
     // This was my hardcoded approach... really bad for the future!
-//    var deviceCornerAngle: CGFloat {
-//        if UIDevice.current.userInterfaceIdiom == .pad {
-//            return (UIDevice.current.orientation == .portrait) ? 55 : 35
-//        } else {
-//            return (UIDevice.current.orientation == .portrait) ? 65 : 25
-//        }
-//    }
-
+    //    var deviceCornerAngle: CGFloat {
+    //        if UIDevice.current.userInterfaceIdiom == .pad {
+    //            return (UIDevice.current.orientation == .portrait) ? 55 : 35
+    //        } else {
+    //            return (UIDevice.current.orientation == .portrait) ? 65 : 25
+    //        }
+    //    }
+    
     func scale(proxy: GeometryProxy, value: Int) -> CGFloat {
         let rowNumber = value / gridItems.count
-
+        
         // We need to consider the offset for even rows!
         let x = (rowNumber % 2 == 0)
         ? proxy.frame(in: .global).midX + proxy.size.width/2
         : proxy.frame(in: .global).midX
-
+        
         let y = proxy.frame(in: .global).midY
         let maxDistanceToCenter = getDistanceFromEdgeToCenter(x: x, y: y)
-
+        
         let currentPoint = CGPoint(x: x, y: y)
         let distanceFromCurrentPointToCenter = distanceBetweenPoints(p1: center, p2: currentPoint)
-
+        
         // This creates a threshold for not just the pure center could get
         // the max scaleValue.
         let distanceDelta = min(
             abs(distanceFromCurrentPointToCenter - maxDistanceToCenter),
             maxDistanceToCenter*0.3
         )
-
+        
         // Helps to get closer to scale 1.0 after the threshold.
         let scalingFactor = 2.3
         let scaleValue = distanceDelta/(maxDistanceToCenter) * scalingFactor
-
+        
         return scaleValue
     }
-
+    
     func getDistanceFromEdgeToCenter(x: CGFloat, y: CGFloat) -> CGFloat {
         let m = slope(p1: CGPoint(x: x, y: y), p2: center)
         let currentAngle = angle(slope: m)
-
+        
         let edgeSlope = slope(p1: .zero, p2: center)
         let deviceCornerAngle = angle(slope: edgeSlope)
-
+        
         if currentAngle > deviceCornerAngle {
             let yEdge = (y > center.y) ? center.y*2 : 0
             let xEdge = (yEdge - y)/m + x
             let edgePoint = CGPoint(x: xEdge, y: yEdge)
-
+            
             return distanceBetweenPoints(p1: center, p2: edgePoint)
         } else {
             let xEdge = (x > center.x) ? center.x*2 : 0
             let yEdge = m * (xEdge - x) + y
             let edgePoint = CGPoint(x: xEdge, y: yEdge)
-
+            
             return distanceBetweenPoints(p1: center, p2: edgePoint)
         }
     }
-
+    
     func distanceBetweenPoints(p1: CGPoint, p2: CGPoint) -> CGFloat {
         let xDistance = abs(p2.x - p1.x)
         let yDistance = abs(p2.y - p1.y)
-
+        
         return CGFloat(
             sqrt(
                 pow(xDistance, 2) + pow(yDistance, 2)
             )
         )
     }
-
+    
     func slope(p1: CGPoint, p2: CGPoint) -> CGFloat {
         return (p2.y - p1.y)/(p2.x - p1.x)
     }
-
+    
     func angle(slope: CGFloat) -> CGFloat {
         return abs(atan(slope) * 180 / .pi)
     }
