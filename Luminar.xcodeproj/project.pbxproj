@@ -9,7 +9,9 @@
 /* Begin PBXBuildFile section */
 		7439B8062A65633400942F34 /* WelcomeSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439B8052A65633400942F34 /* WelcomeSecond.swift */; };
 		7439B8082A65688500942F34 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439B8072A65688500942F34 /* TemplateView.swift */; };
+		7439B80A2A65759D00942F34 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439B8092A65759D00942F34 /* SplashView.swift */; };
 		74C5F44F2A6033B700F5D94F /* ThoughtBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5F44E2A6033B700F5D94F /* ThoughtBubbleView.swift */; };
+		74E563792A657955000A859E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74E563782A657955000A859E /* Launch Screen.storyboard */; };
 		A5ED46C82A5E49A7000046FE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46C72A5E49A6000046FE /* CameraView.swift */; };
 		A5ED46EA2A5FAC76000046FE /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46E92A5FAC76000046FE /* ContactsView.swift */; };
 		A5ED46EC2A5FAC8E000046FE /* ProfilePictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46EB2A5FAC8E000046FE /* ProfilePictures.swift */; };
@@ -24,7 +26,9 @@
 /* Begin PBXFileReference section */
 		7439B8052A65633400942F34 /* WelcomeSecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeSecond.swift; sourceTree = "<group>"; };
 		7439B8072A65688500942F34 /* TemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
+		7439B8092A65759D00942F34 /* SplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		74C5F44E2A6033B700F5D94F /* ThoughtBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtBubbleView.swift; sourceTree = "<group>"; };
+		74E563782A657955000A859E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A5ED46C72A5E49A6000046FE /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		A5ED46E92A5FAC76000046FE /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A5ED46EB2A5FAC8E000046FE /* ProfilePictures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePictures.swift; sourceTree = "<group>"; };
@@ -51,6 +55,7 @@
 		E71E5A752A5CE04E005935F7 = {
 			isa = PBXGroup;
 			children = (
+				74E563782A657955000A859E /* Launch Screen.storyboard */,
 				E71E5A802A5CE04E005935F7 /* Luminar */,
 				E71E5A7F2A5CE04E005935F7 /* Products */,
 			);
@@ -77,6 +82,7 @@
 				A5ED46E92A5FAC76000046FE /* ContactsView.swift */,
 				A5ED46EB2A5FAC8E000046FE /* ProfilePictures.swift */,
 				7439B8072A65688500942F34 /* TemplateView.swift */,
+				7439B8092A65759D00942F34 /* SplashView.swift */,
 				E71E5A852A5CE050005935F7 /* Assets.xcassets */,
 				E71E5A872A5CE050005935F7 /* Preview Content */,
 			);
@@ -149,6 +155,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74E563792A657955000A859E /* Launch Screen.storyboard in Resources */,
 				E71E5A892A5CE050005935F7 /* Preview Assets.xcassets in Resources */,
 				E71E5A862A5CE050005935F7 /* Assets.xcassets in Resources */,
 			);
@@ -162,6 +169,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E71E5A9A2A5CEB32005935F7 /* Donkey.swift in Sources */,
+				7439B80A2A65759D00942F34 /* SplashView.swift in Sources */,
 				E71E5A982A5CE46D005935F7 /* HomeView.swift in Sources */,
 				A5ED46C82A5E49A7000046FE /* CameraView.swift in Sources */,
 				A5ED46EA2A5FAC76000046FE /* ContactsView.swift in Sources */,
@@ -302,12 +310,14 @@
 				DEVELOPMENT_TEAM = 876S4LM4HW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Luminar/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = " Required to take photos";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = " Required to save photos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Permission required to save photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -333,12 +343,14 @@
 				DEVELOPMENT_TEAM = 876S4LM4HW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Luminar/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_NSCameraUsageDescription = " Required to take photos";
-				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = " Required to save photos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Permission required to save photos";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = SplashViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
