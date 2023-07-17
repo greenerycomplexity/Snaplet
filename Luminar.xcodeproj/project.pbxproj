@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7439B8062A65633400942F34 /* WelcomeSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439B8052A65633400942F34 /* WelcomeSecond.swift */; };
+		7439B8082A65688500942F34 /* TemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7439B8072A65688500942F34 /* TemplateView.swift */; };
 		74C5F44F2A6033B700F5D94F /* ThoughtBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74C5F44E2A6033B700F5D94F /* ThoughtBubbleView.swift */; };
 		A5ED46C82A5E49A7000046FE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46C72A5E49A6000046FE /* CameraView.swift */; };
 		A5ED46EA2A5FAC76000046FE /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46E92A5FAC76000046FE /* ContactsView.swift */; };
@@ -22,6 +23,7 @@
 
 /* Begin PBXFileReference section */
 		7439B8052A65633400942F34 /* WelcomeSecond.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeSecond.swift; sourceTree = "<group>"; };
+		7439B8072A65688500942F34 /* TemplateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateView.swift; sourceTree = "<group>"; };
 		74C5F44E2A6033B700F5D94F /* ThoughtBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtBubbleView.swift; sourceTree = "<group>"; };
 		A5ED46C72A5E49A6000046FE /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		A5ED46E92A5FAC76000046FE /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				A5ED46C72A5E49A6000046FE /* CameraView.swift */,
 				A5ED46E92A5FAC76000046FE /* ContactsView.swift */,
 				A5ED46EB2A5FAC8E000046FE /* ProfilePictures.swift */,
+				7439B8072A65688500942F34 /* TemplateView.swift */,
 				E71E5A852A5CE050005935F7 /* Assets.xcassets */,
 				E71E5A872A5CE050005935F7 /* Preview Content */,
 			);
@@ -166,6 +169,7 @@
 				A5ED46EC2A5FAC8E000046FE /* ProfilePictures.swift in Sources */,
 				E71E5A942A5CE339005935F7 /* WelcomeFirst.swift in Sources */,
 				E71E5A822A5CE04E005935F7 /* LuminarApp.swift in Sources */,
+				7439B8082A65688500942F34 /* TemplateView.swift in Sources */,
 				7439B8062A65633400942F34 /* WelcomeSecond.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
