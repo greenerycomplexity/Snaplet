@@ -16,6 +16,8 @@ struct HomeView: View {
     
     @State var floating1 = 15.0
     
+    @State var showContactsView = false
+    
     var body: some View {
         NavigationStack{
             ZStack{
@@ -23,34 +25,16 @@ struct HomeView: View {
                 LinearGradient(gradient: Gradient(colors: AppCustomisation.PinkBlueGradients), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.vertical)
                 
-                
-                VStack{
-                    
+                VStack {
                     // First image
                     ZStack{
-                        Image("toddler_mess_img")
-                            .resizable()
-                            .cornerRadius(15.0)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 250, height: 200)
-                            .glow(color: Color("creamyCream"),radius: 30)
-                            .offset(x: 80, y: floating1)
-                            .onAppear {
-
-                                withAnimation(.easeIn(duration: 1).repeatForever(autoreverses: true)) {
-                                     floating1 = 17
-
-                                }
-                                
-                                
-                            }
+                        FloatingImageView(imageName: "toddler_mess_img", offset_x: 80, offset_y: 20)
+                        .frame(width: 250, height: 200)
+                    
                         
                         ThoughtBubbleView(comment: "What a mess! 🤣🤣", mirrored: true)
                             .offset(x: -20)
                     }
-                    
-                    
-                    
                     Spacer()
                     
                     // Shown weekly prompt, with camera icon in the back
@@ -71,18 +55,8 @@ struct HomeView: View {
                     
                     // Second image
                     ZStack{
-                        Image("breakfast_example")
-                            .resizable()
-                            .cornerRadius(15.0)
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 250, height: 230)
-                            .glow(color: Color("creamyCream"),radius: 15)
-                            .offset(x: -95, y:15)
-//                            .onAppear {
-//                                withAnimation(.easeInOut(duration: 3).repeatForever(autoreverses: true)) {
-//                                     floating1 = 15
-//                                }
-//                            }
+                        FloatingImageView(imageName: "breakfast_example", offset_x: -95, offset_y: 15)
+                        .frame(width: 300, height: 230)
                         
                         ThoughtBubbleView(comment: "Yummy yummy breakfast ❤️")
                             .offset(x:-18, y: 20)
@@ -92,14 +66,23 @@ struct HomeView: View {
                     
                     Spacer()
                     
+                    NavigationLink(isActive: $showContactsView) {
+                        ContactsView()
+                            .navigationBarBackButtonHidden()
+                    } label: {
+                        Text("")
+                    }
+
                     
                     // Move to camera view
                     NavigationLink{
-                        CameraView(onCaptureComplete: {}, dismissAutomaticallyOnCapture: true)
+                        CameraView(onCaptureComplete: {
+                            showContactsView = true
+                        }, dismissAutomaticallyOnCapture: true)
                             .navigationBarBackButtonHidden(true)
                             .preferredColorScheme(.dark)
                     }
-
+                    
                     // Have image of Start text as label for nav button
                 label: {
                     Image("start_button_home")
@@ -136,11 +119,37 @@ struct HomeView: View {
     
 }
 
+struct FloatingImageView : View {
+    
+    @State private var imageOffset: CGSize = .zero
+    var imageName: String
+    
+    var offset_x: Double
+    var offset_y: Double
+    
+    var body: some View {
+        Image(imageName)
+            .resizable()
+            .cornerRadius(15.0)
+            .aspectRatio(contentMode: .fit)
+            .glow(color: Color("creamyCream"),radius: 30)
+            .offset(x:offset_x, y:offset_y)
+            .onAppear{
+                withAnimation(Animation.easeInOut(duration: 1).repeatForever()) {
+                    imageOffset = CGSize(width: 80, height: 30)
+                }
+            }
+        
+        
+    }
+}
+
+
 extension View {
     func glow(color: Color = .black, radius: CGFloat = 20) -> some View {
         self
             .shadow(color: color, radius: radius / 3)
-
+        
     }
 }
 
