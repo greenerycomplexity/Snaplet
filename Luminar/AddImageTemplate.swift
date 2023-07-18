@@ -105,7 +105,8 @@ struct TemplatePicker: View {
                     Spacer()
                     
                     NavigationLink{
-                         TemplatePicker()
+//                        This is not ideal. Change pending.
+                        HomeView().navigationBarBackButtonHidden(true)
                      } label: {
                          Image("invite_text")
                              .scaleEffect(0.8)
