@@ -10,16 +10,13 @@ import AVFoundation
 
 struct WelcomeFirst: View {
     
-    let welcomeGradientColors = [Color("ponyPink"), Color("creamyCream")]
-    
-    
     @Binding var isPopoverShown:Bool
     @State var isOn = false
     
     var body: some View {
         NavigationStack{
         ZStack{
-            LinearGradient(gradient: Gradient(colors: welcomeGradientColors), startPoint: .top, endPoint: .bottom)
+            LinearGradient(gradient: Gradient(colors:AppCustomisation.PinkCreamGradientColors), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.vertical)
             VStack{
                 

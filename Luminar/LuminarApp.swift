@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct LuminarApp: App {
+    
     var body: some Scene {
         WindowGroup {
             HomeView()
+            
         }
     }
 }

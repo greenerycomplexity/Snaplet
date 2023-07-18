@@ -13,11 +13,6 @@ struct ContactsView: View {
     private static let spacingBetweenRows: CGFloat = 1
     private static let totalColumns: Int = 6
     
-    //background colour - gradient
-    let backColours = [
-        Color("ponyPink"),
-        Color("babyBlue")
-    ]
     
     let gridItems = Array(
         repeating: GridItem(
@@ -33,7 +28,7 @@ struct ContactsView: View {
             ZStack {
                 
                 
-                LinearGradient(gradient: Gradient(colors: backColours), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: AppCustomisation.PinkBlueGradients), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea([.all])
                 
                 ScrollView([.horizontal, .vertical], showsIndicators: false) {

@@ -14,8 +14,6 @@ struct HomeView: View {
     @AppStorage("isFirstTime") var isFirstTime: Bool = true
     @State private var isPopoverShown:Bool = false
     
-    let homeGradientColors = [Color("ponyPink"), Color("babyBlue")]
-    
     @State var floating1 = 15.0
     @State var image1Opacity = 0.0
     @State var image2Opacity = 0.0
@@ -24,7 +22,7 @@ struct HomeView: View {
         NavigationStack{
             ZStack{
                 // Background gradient for home view
-                LinearGradient(gradient: Gradient(colors: homeGradientColors), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: AppCustomisation.PinkBlueGradients), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.vertical)
                 
                 
