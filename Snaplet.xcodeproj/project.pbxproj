@@ -15,12 +15,11 @@
 		A5ED46C82A5E49A7000046FE /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46C72A5E49A6000046FE /* CameraView.swift */; };
 		A5ED46EA2A5FAC76000046FE /* ContactsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46E92A5FAC76000046FE /* ContactsView.swift */; };
 		A5ED46EC2A5FAC8E000046FE /* ProfilePictures.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5ED46EB2A5FAC8E000046FE /* ProfilePictures.swift */; };
-		E71E5A822A5CE04E005935F7 /* LuminarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A812A5CE04E005935F7 /* LuminarApp.swift */; };
+		E71E5A822A5CE04E005935F7 /* SnapletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A812A5CE04E005935F7 /* SnapletApp.swift */; };
 		E71E5A862A5CE050005935F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71E5A852A5CE050005935F7 /* Assets.xcassets */; };
 		E71E5A892A5CE050005935F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E71E5A882A5CE050005935F7 /* Preview Assets.xcassets */; };
 		E71E5A942A5CE339005935F7 /* WelcomeFirst.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A932A5CE339005935F7 /* WelcomeFirst.swift */; };
 		E71E5A982A5CE46D005935F7 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A972A5CE46D005935F7 /* HomeView.swift */; };
-		E71E5A9A2A5CEB32005935F7 /* Donkey.swift in Sources */ = {isa = PBXBuildFile; fileRef = E71E5A992A5CEB32005935F7 /* Donkey.swift */; };
 		E75EF0C22A66160F0090207D /* AddImageTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EF0C12A66160F0090207D /* AddImageTemplate.swift */; };
 		E75EF0C42A66166F0090207D /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EF0C32A66166F0090207D /* ImagePicker.swift */; };
 		E75EF0C62A6618D30090207D /* AppCustomisation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75EF0C52A6618D20090207D /* AppCustomisation.swift */; };
@@ -35,13 +34,12 @@
 		A5ED46C72A5E49A6000046FE /* CameraView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		A5ED46E92A5FAC76000046FE /* ContactsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsView.swift; sourceTree = "<group>"; };
 		A5ED46EB2A5FAC8E000046FE /* ProfilePictures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePictures.swift; sourceTree = "<group>"; };
-		E71E5A7E2A5CE04E005935F7 /* Luminar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luminar.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E71E5A812A5CE04E005935F7 /* LuminarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LuminarApp.swift; sourceTree = "<group>"; };
+		E71E5A7E2A5CE04E005935F7 /* Snaplet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Snaplet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E71E5A812A5CE04E005935F7 /* SnapletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapletApp.swift; sourceTree = "<group>"; };
 		E71E5A852A5CE050005935F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E71E5A882A5CE050005935F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E71E5A932A5CE339005935F7 /* WelcomeFirst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeFirst.swift; sourceTree = "<group>"; };
 		E71E5A972A5CE46D005935F7 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E71E5A992A5CEB32005935F7 /* Donkey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Donkey.swift; sourceTree = "<group>"; };
 		E75EF0C12A66160F0090207D /* AddImageTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddImageTemplate.swift; sourceTree = "<group>"; };
 		E75EF0C32A66166F0090207D /* ImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		E75EF0C52A6618D20090207D /* AppCustomisation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCustomisation.swift; sourceTree = "<group>"; };
@@ -70,7 +68,7 @@
 		E71E5A7F2A5CE04E005935F7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E71E5A7E2A5CE04E005935F7 /* Luminar.app */,
+				E71E5A7E2A5CE04E005935F7 /* Snaplet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -78,12 +76,11 @@
 		E71E5A802A5CE04E005935F7 /* Luminar */ = {
 			isa = PBXGroup;
 			children = (
-				E71E5A812A5CE04E005935F7 /* LuminarApp.swift */,
+				E71E5A812A5CE04E005935F7 /* SnapletApp.swift */,
 				E71E5A972A5CE46D005935F7 /* HomeView.swift */,
 				74C5F44E2A6033B700F5D94F /* ThoughtBubbleView.swift */,
 				E71E5A932A5CE339005935F7 /* WelcomeFirst.swift */,
 				7439B8052A65633400942F34 /* WelcomeSecond.swift */,
-				E71E5A992A5CEB32005935F7 /* Donkey.swift */,
 				A5ED46C72A5E49A6000046FE /* CameraView.swift */,
 				A5ED46E92A5FAC76000046FE /* ContactsView.swift */,
 				A5ED46EB2A5FAC8E000046FE /* ProfilePictures.swift */,
@@ -109,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E71E5A7D2A5CE04E005935F7 /* Luminar */ = {
+		E71E5A7D2A5CE04E005935F7 /* Snaplet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E71E5A8C2A5CE050005935F7 /* Build configuration list for PBXNativeTarget "Luminar" */;
+			buildConfigurationList = E71E5A8C2A5CE050005935F7 /* Build configuration list for PBXNativeTarget "Snaplet" */;
 			buildPhases = (
 				E71E5A7A2A5CE04E005935F7 /* Sources */,
 				E71E5A7B2A5CE04E005935F7 /* Frameworks */,
@@ -121,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = Luminar;
+			name = Snaplet;
 			productName = Luminar;
-			productReference = E71E5A7E2A5CE04E005935F7 /* Luminar.app */;
+			productReference = E71E5A7E2A5CE04E005935F7 /* Snaplet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -141,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E71E5A792A5CE04E005935F7 /* Build configuration list for PBXProject "Luminar" */;
+			buildConfigurationList = E71E5A792A5CE04E005935F7 /* Build configuration list for PBXProject "Snaplet" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -154,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E71E5A7D2A5CE04E005935F7 /* Luminar */,
+				E71E5A7D2A5CE04E005935F7 /* Snaplet */,
 			);
 		};
 /* End PBXProject section */
@@ -178,7 +175,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E75EF0C42A66166F0090207D /* ImagePicker.swift in Sources */,
-				E71E5A9A2A5CEB32005935F7 /* Donkey.swift in Sources */,
 				7439B80A2A65759D00942F34 /* SplashView.swift in Sources */,
 				E71E5A982A5CE46D005935F7 /* HomeView.swift in Sources */,
 				A5ED46C82A5E49A7000046FE /* CameraView.swift in Sources */,
@@ -188,7 +184,7 @@
 				E75EF0C22A66160F0090207D /* AddImageTemplate.swift in Sources */,
 				A5ED46EC2A5FAC8E000046FE /* ProfilePictures.swift in Sources */,
 				E71E5A942A5CE339005935F7 /* WelcomeFirst.swift in Sources */,
-				E71E5A822A5CE04E005935F7 /* LuminarApp.swift in Sources */,
+				E71E5A822A5CE04E005935F7 /* SnapletApp.swift in Sources */,
 				7439B8082A65688500942F34 /* TemplateView.swift in Sources */,
 				7439B8062A65633400942F34 /* WelcomeSecond.swift in Sources */,
 			);
@@ -380,7 +376,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E71E5A792A5CE04E005935F7 /* Build configuration list for PBXProject "Luminar" */ = {
+		E71E5A792A5CE04E005935F7 /* Build configuration list for PBXProject "Snaplet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E71E5A8A2A5CE050005935F7 /* Debug */,
@@ -389,7 +385,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E71E5A8C2A5CE050005935F7 /* Build configuration list for PBXNativeTarget "Luminar" */ = {
+		E71E5A8C2A5CE050005935F7 /* Build configuration list for PBXNativeTarget "Snaplet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E71E5A8D2A5CE050005935F7 /* Debug */,
