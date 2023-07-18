@@ -15,8 +15,6 @@ struct HomeView: View {
     @State private var isPopoverShown:Bool = false
     
     @State var floating1 = 15.0
-    @State var image1Opacity = 0.0
-    @State var image2Opacity = 0.0
     
     var body: some View {
         NavigationStack{
