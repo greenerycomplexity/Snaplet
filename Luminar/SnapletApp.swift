@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct LuminarApp: App {
+struct SnapletApp: App {
     
     var body: some Scene {
         WindowGroup {
