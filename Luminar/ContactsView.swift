@@ -52,12 +52,6 @@ struct ContactsView: View {
                                         x: offsetX(value),
                                         y: 0
                                     )
-                                    .onTapGesture {
-                                        // this here is where you would put a navigation link or something else to move to the next page using the value below (0-9) to relate to the face selected
-                                    print("single press \(value%profilePictures.count)")
-                                        //Navigation link here
-                                        
-                                    }
                             }
                             // You need to add height
                             .frame(
@@ -67,22 +61,23 @@ struct ContactsView: View {
                     }
                 }
                 
-                
-                NavigationLink{
-                    TemplateView()
-                }label: {
-                    Image("continue_text")
-                        .scaleEffect(0.8)
-                        .padding(.vertical, 5)
-                        .padding(.horizontal,40)
-                        .background(Color("ponyPink"))
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-                    
-                    
-                        .padding(.top,2.0)
-                        .offset(y: 350)
-                    
+                VStack {
+                    Spacer()
+                    NavigationLink{
+                        TemplatePicker()
+                    } label: {
+                        Image("continue_text")
+                            .scaleEffect(0.8)
+                            .padding(.vertical, 5)
+                            .padding(.horizontal, 40)
+                            .background(Color("ponyPink"))
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+                            .padding(.top,2.0)
+                    }
                 }
+                
+                
+                
                 
                 
             }
@@ -111,14 +106,6 @@ struct ContactsView: View {
         )
     }
     
-    // This was my hardcoded approach... really bad for the future!
-    //    var deviceCornerAngle: CGFloat {
-    //        if UIDevice.current.userInterfaceIdiom == .pad {
-    //            return (UIDevice.current.orientation == .portrait) ? 55 : 35
-    //        } else {
-    //            return (UIDevice.current.orientation == .portrait) ? 65 : 25
-    //        }
-    //    }
     
     func scale(proxy: GeometryProxy, value: Int) -> CGFloat {
         let rowNumber = value / gridItems.count
