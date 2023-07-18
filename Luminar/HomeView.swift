@@ -13,9 +13,6 @@ struct HomeView: View {
     //    and present the popover accordingly
     @AppStorage("isFirstTime") var isFirstTime: Bool = true
     @State private var isPopoverShown:Bool = false
-    
-    @State var floating1 = 15.0
-    
     @State var showContactsView = false
     
     var body: some View {
@@ -26,15 +23,17 @@ struct HomeView: View {
                     .edgesIgnoringSafeArea(.vertical)
                 
                 VStack {
+                    
                     // First image
                     ZStack{
                         FloatingImageView(imageName: "toddler_mess_img", offset_x: 80, offset_y: 20)
-                        .frame(width: 250, height: 200)
-                    
+                            .frame(width: 250, height: 200)
+                        
                         
                         ThoughtBubbleView(comment: "What a mess! 🤣🤣", mirrored: true)
                             .offset(x: -20)
                     }
+                    
                     Spacer()
                     
                     // Shown weekly prompt, with camera icon in the back
@@ -56,7 +55,7 @@ struct HomeView: View {
                     // Second image
                     ZStack{
                         FloatingImageView(imageName: "breakfast_example", offset_x: -95, offset_y: 15)
-                        .frame(width: 300, height: 230)
+                            .frame(width: 300, height: 230)
                         
                         ThoughtBubbleView(comment: "Yummy yummy breakfast ❤️")
                             .offset(x:-18, y: 20)
@@ -72,15 +71,15 @@ struct HomeView: View {
                     } label: {
                         Text("")
                     }
-
+                    
                     
                     // Move to camera view
                     NavigationLink{
                         CameraView(onCaptureComplete: {
                             showContactsView = true
                         }, dismissAutomaticallyOnCapture: true)
-                            .navigationBarBackButtonHidden(true)
-                            .preferredColorScheme(.dark)
+                        .navigationBarBackButtonHidden(true)
+                        .preferredColorScheme(.dark)
                     }
                     
                     // Have image of Start text as label for nav button
@@ -120,12 +119,11 @@ struct HomeView: View {
 }
 
 struct FloatingImageView : View {
-    
-    @State private var imageOffset: CGSize = .zero
     var imageName: String
     
-    var offset_x: Double
-    var offset_y: Double
+    @State var offset_x: Double
+    @State var offset_y: Double
+    @State var imageOpacity: Double = 0.0
     
     var body: some View {
         Image(imageName)
@@ -134,9 +132,13 @@ struct FloatingImageView : View {
             .aspectRatio(contentMode: .fit)
             .glow(color: Color("creamyCream"),radius: 30)
             .offset(x:offset_x, y:offset_y)
+            .opacity(imageOpacity)
             .onAppear{
-                withAnimation(Animation.easeInOut(duration: 1).repeatForever()) {
-                    imageOffset = CGSize(width: 80, height: 30)
+                withAnimation(.easeIn(duration: 2).delay(2.5)) {
+                    imageOpacity = 1.0
+                }
+                withAnimation(.easeInOut(duration: 1).repeatForever()) {
+                    offset_y = offset_y + 4
                 }
             }
         

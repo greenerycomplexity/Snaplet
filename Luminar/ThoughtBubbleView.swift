@@ -20,6 +20,10 @@ struct ThoughtBubbleView: View {
     @State var bubble2Opacity = 0.0
     @State var contentOpacity = 0.0
     
+    var bubble1Delay:Double = 2
+    var bubble2Delay:Double = 3
+    var contentDelay:Double = 4.5
+    
     var body: some View {
         ZStack{
             Circle()
@@ -50,13 +54,13 @@ struct ThoughtBubbleView: View {
             .opacity(contentOpacity)
             
         }.onAppear {
-            withAnimation(.easeIn(duration: 1).delay(1)) {
+            withAnimation(.easeIn(duration: 1).delay(bubble1Delay)) {
                 bubble1Opacity = 1
             }
-            withAnimation(.easeIn(duration: 1).delay(2)) {
+            withAnimation(.easeIn(duration: 1).delay(bubble2Delay)) {
                 bubble2Opacity = 1
             }
-            withAnimation(.easeIn(duration: 1).delay(3.5)) {
+            withAnimation(.easeIn(duration: 1).delay(contentDelay)) {
                 contentOpacity = 1
             }
         }
