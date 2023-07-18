@@ -1,10 +1,3 @@
-//
-//  ContentView3.swift
-//  SW PhotoTemplate
-//
-//  Created by Steph Worladge on 17/7/2023.
-//
-
 import SwiftUI
 import UIKit
 
@@ -12,7 +5,6 @@ struct RoundedRectangleView3: View {
     var symbolName: String
     var color: Color
     var size: CGSize
-    var position: CGPoint
     
     var body: some View {
         ZStack {
@@ -24,7 +16,6 @@ struct RoundedRectangleView3: View {
                 .foregroundColor(.white)
                 .font(.system(size: 30))
         }
-        .position(position)
     }
 }
 
@@ -34,7 +25,6 @@ struct RoundedRectangleWithButton: View {
     
     var color: Color
     var size: CGSize
-    var position: CGPoint
     
     var body: some View {
         ZStack {
@@ -53,13 +43,13 @@ struct RoundedRectangleWithButton: View {
                     Image(systemName: "photo")
                         .foregroundColor(.white)
                         .font(.headline)
+                        
                 }
                 .sheet(isPresented: $showImagePicker) {
                     ImagePicker(selectedImage: $selectedImage)
                 }
             }
         }
-        .position(position)
     }
 }
 
@@ -69,23 +59,70 @@ struct TemplatePicker: View {
     @State private var selectedImage: UIImage?
     
     var body: some View {
-        ZStack {
-            LinearGradient(gradient: Gradient(colors: AppCustomisation.PinkBlueGradients), startPoint: .top, endPoint: .bottom)
-                .edgesIgnoringSafeArea(.vertical)
-            
-            // Grey rounded rectangle
-            RoundedRectangleView3(symbolName: "", color: .gray, size: CGSize(width: 320, height: 270), position: CGPoint(x: 199, y: 354))
-            
-            // Five rounded corner rectangles
-            RoundedRectangleWithButton(color: .blue, size: CGSize(width: 90, height: 147), position: CGPoint(x: 95, y: 300))
-            
-            RoundedRectangleWithButton(color: .red, size: CGSize(width: 40, height: 147), position: CGPoint(x: 165, y: 300))
-            
-            RoundedRectangleWithButton(color: .green, size: CGSize(width: 159, height: 147), position: CGPoint(x: 270, y: 300))
-            
-            RoundedRectangleWithButton(color: .yellow, size: CGSize(width: 215, height: 100), position: CGPoint(x: 152, y: 430))
-            
-            RoundedRectangleWithButton(color: .orange, size: CGSize(width: 87, height: 100), position: CGPoint(x: 306, y: 430))
+        NavigationStack{
+            ZStack {
+                LinearGradient(gradient: Gradient(colors: AppCustomisation.PinkBlueGradients), startPoint: .top, endPoint: .bottom)
+                    .edgesIgnoringSafeArea(.vertical)
+                
+                
+                VStack{
+                    Image("AddImageTemplate_text")
+                        .padding(.top, 10)
+                        .padding(.bottom, 5)
+                    Spacer()
+                    
+                    ZStack{
+                        // Grey rounded rectangle
+                        RoundedRectangleView3(symbolName: "", color: .gray, size: CGSize(width: 320, height: 270))
+                        
+                        VStack{
+                            HStack{
+                                RoundedRectangleWithButton(color: .blue, size: CGSize(width: 90, height: 147))
+                                RoundedRectangleWithButton(color: .red, size: CGSize(width: 40, height: 147))
+                                RoundedRectangleWithButton(color: .green, size: CGSize(width: 159, height: 147))
+                            }
+                            .padding(.bottom, 3)
+                            HStack{
+                                RoundedRectangleWithButton(color: .yellow, size: CGSize(width: 215, height: 100))
+                                RoundedRectangleWithButton(color: .orange, size: CGSize(width: 87, height: 100))
+                            }
+                        }
+                    }
+                    Spacer()
+                    HStack{
+                        let randomPeople = Array(Set(profilePictures)).prefix(5)
+                        
+                        ForEach(randomPeople, id: \.self) { imageName in
+                            Image(imageName)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 70)
+                                .clipShape(Circle())
+                        }
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    NavigationLink{
+                         TemplatePicker()
+                     } label: {
+                         Image("invite_text")
+                             .scaleEffect(0.8)
+                             .padding(.vertical, 5)
+                             .padding(.horizontal, 40)
+                             .background(Color("ponyPink"))
+                             .clipShape(RoundedRectangle(cornerRadius: 20))
+                             .padding(.top,2.0)
+                     }
+                    
+                    
+                }
+                
+                
+                
+                
+            }
         }
     }
 }
