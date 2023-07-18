@@ -10,16 +10,13 @@ import SwiftUI
 struct WelcomeSecond: View {
     
     @Binding var isPopoverShown:Bool
-    //Colours in gradient
-    let welcomeGradientColors = [Color("ponyPink"), Color("creamyCream")]
-
     
     var body: some View {
         NavigationStack{
             
             ZStack {
                 //Make the gradient
-                LinearGradient(gradient: Gradient(colors: welcomeGradientColors), startPoint: .top, endPoint: .bottom)
+                LinearGradient(gradient: Gradient(colors: AppCustomisation.PinkCreamGradientColors), startPoint: .top, endPoint: .bottom)
                     .edgesIgnoringSafeArea(.vertical)
                 
                 
