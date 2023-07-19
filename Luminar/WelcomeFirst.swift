@@ -21,15 +21,13 @@ struct WelcomeFirst: View {
             VStack{
                 
                 Spacer()
+                Text("🤗")
+                    .font(.system(size: 35))
+                    .padding(.bottom,1)
+    
                 
-                Image(systemName: "sun.haze")
-                    .scaledToFit()
-                    .dynamicTypeSize(.xxxLarge)
-                    .foregroundColor(.red)
-                    .padding(.bottom, 2.0)
-                
-                Text("Welcome to Luminar!")
-                    .font(.title2)
+                Text("Welcome to Snaplet!")
+                    .font(.system(size: 25,weight: .semibold, design: .rounded))
                     .foregroundColor(.black)
                 Spacer()
                 
