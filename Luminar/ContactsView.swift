@@ -68,7 +68,7 @@ struct ContactsView: View {
                     } label: {
                         Image("continue_text")
                             .scaleEffect(0.8)
-                            .frame(width: 230, height: 70)
+                            .frame(width: 210, height: 60)
                             .background(Color("ponyPink"))
                             .clipShape(RoundedRectangle(cornerRadius: 20))
                             .padding(.top,2.0)

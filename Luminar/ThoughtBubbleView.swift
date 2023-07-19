@@ -22,9 +22,9 @@ struct ThoughtBubbleView: View {
     @State var bubble2Opacity = 0.0
     @State var contentOpacity = 0.0
     
-    var bubble1Delay:Double = 0
-    var bubble2Delay:Double = 1
-    var contentDelay:Double = 2.5
+    var bubble1Delay:Double = 0.5
+    var bubble2Delay:Double = 1.5
+    var contentDelay:Double = 3
     
     var body: some View {
         ZStack{

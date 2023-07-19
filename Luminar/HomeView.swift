@@ -88,7 +88,7 @@ struct HomeView: View {
                 label: {
                     Image("start_button_home")
                         .scaleEffect(0.8)
-                        .frame(width: 230, height: 70)
+                        .frame(width: 210, height: 60)
                         .background(Color("ponyPink"))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
                     
@@ -134,10 +134,14 @@ struct FloatingImageView : View {
             .aspectRatio(contentMode: .fit)
             .glow(color: Color("creamyCream"),radius: 30)
             .offset(x:offset_x, y:offset_y)
-            .opacity(imageOpacity)
+//            .opacity(imageOpacity)
             .onAppear{
                 withAnimation(nil) {
-                    imageOpacity = 1.0
+//                   Giving the withAnimation a non-consequental @State value to change,
+//                   so it wouldn't affect all the other views
+                    @State var nonConsequential = 0.0
+                    nonConsequential = 1.0
+                 
                     withAnimation(.easeInOut(duration: 1).repeatForever()) {
                         offset_y = offset_y + 4
                     }
