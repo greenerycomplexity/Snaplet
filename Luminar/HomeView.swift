@@ -26,10 +26,11 @@ struct HomeView: View {
                     
                     // First image
                     ZStack{
-                        FloatingImageView(imageName: "toddler_mess_img", offset_x: 80, offset_y: 20)
+                        FloatingImageView(imageName: "toddler_mess_img", offset_x: 75, offset_y: 20)
                             .frame(width: 250, height: 200)
-                        
-                        
+                            .scaleEffect(1.05)
+
+
                         ThoughtBubbleView(comment: "What a mess! 🤣🤣", mirrored: true)
                             .offset(x: -20)
                     }
@@ -42,22 +43,23 @@ struct HomeView: View {
                         Image(systemName: "camera")
                             .font(.system(size: 130))
                             .foregroundColor(Color("navyBlue"))
-                            .offset(x: -60, y: -20)
-                        Image("morningMood_text")
-                            .scaleEffect(1)
-                            .offset(x: 50, y:50)
+                            .offset(x: -80, y: -40)
+                        Image("pointOfView_text")
+                            .scaleEffect(1.2)
+                            .offset(x: 50, y:40)
                         
-                    }.animation(nil)
+                    }
+
                     
                     Spacer()
                     
                     
                     // Second image
                     ZStack{
-                        FloatingImageView(imageName: "breakfast_example", offset_x: -95, offset_y: 15)
+                        FloatingImageView(imageName: "mountainGoat_example", offset_x: -95, offset_y: 10)
                             .frame(width: 300, height: 230)
-                        
-                        ThoughtBubbleView(comment: "Yummy yummy breakfast ❤️")
+
+                        ThoughtBubbleView(comment: "How crazy is this ⁉️")
                             .offset(x:-18, y: 20)
                             .scaleEffect(1.2)
                     }
@@ -86,10 +88,10 @@ struct HomeView: View {
                 label: {
                     Image("start_button_home")
                         .scaleEffect(0.8)
-                        .padding(.vertical, 5)
-                        .padding(.horizontal,40)
+                        .frame(width: 230, height: 70)
                         .background(Color("ponyPink"))
                         .clipShape(RoundedRectangle(cornerRadius: 20))
+                    
                     
                 }.padding(.top,2.0)
                     
@@ -134,12 +136,13 @@ struct FloatingImageView : View {
             .offset(x:offset_x, y:offset_y)
             .opacity(imageOpacity)
             .onAppear{
-                withAnimation(.easeIn(duration: 2).delay(2.5)) {
+                withAnimation(nil) {
                     imageOpacity = 1.0
+                    withAnimation(.easeInOut(duration: 1).repeatForever()) {
+                        offset_y = offset_y + 4
+                    }
                 }
-                withAnimation(.easeInOut(duration: 1).repeatForever()) {
-                    offset_y = offset_y + 4
-                }
+
             }
         
         

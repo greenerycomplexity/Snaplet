@@ -8,10 +8,12 @@
 
 import SwiftUI
 
+
 struct ThoughtBubbleView: View {
     
     var comment: String
     var mirrored:Bool = false
+    @State var nonConsequential = 0.0
     
     var circle_offset_x: CGFloat = 12
     var bubble_offset_x: CGFloat = 92
@@ -20,9 +22,9 @@ struct ThoughtBubbleView: View {
     @State var bubble2Opacity = 0.0
     @State var contentOpacity = 0.0
     
-    var bubble1Delay:Double = 2
-    var bubble2Delay:Double = 3
-    var contentDelay:Double = 4.5
+    var bubble1Delay:Double = 0
+    var bubble2Delay:Double = 1
+    var contentDelay:Double = 2.5
     
     var body: some View {
         ZStack{
@@ -54,15 +56,20 @@ struct ThoughtBubbleView: View {
             .opacity(contentOpacity)
             
         }.onAppear {
-            withAnimation(.easeIn(duration: 1).delay(bubble1Delay)) {
-                bubble1Opacity = 1
+            withAnimation(nil){
+                nonConsequential = 1
+                
+                withAnimation(.easeIn(duration: 1).delay(bubble1Delay)) {
+                    bubble1Opacity = 1
+                }
+                withAnimation(.easeIn(duration: 1).delay(bubble2Delay)) {
+                    bubble2Opacity = 1
+                }
+                withAnimation(.easeIn(duration: 1).delay(contentDelay)) {
+                    contentOpacity = 1
+                }
             }
-            withAnimation(.easeIn(duration: 1).delay(bubble2Delay)) {
-                bubble2Opacity = 1
-            }
-            withAnimation(.easeIn(duration: 1).delay(contentDelay)) {
-                contentOpacity = 1
-            }
+
         }
         
     }
