@@ -12,7 +12,7 @@ struct HomeView: View {
     //    Store whether it is the first time the user opens the app
     //    and present the popover accordingly
     @AppStorage("isFirstTime") var isFirstTime: Bool = true
-    @State private var isPopoverShown:Bool = false
+    @State private var isPopoverShown:Bool = true
     @State var showContactsView = false
     
     var body: some View {
