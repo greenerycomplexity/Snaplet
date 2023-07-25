@@ -1,7 +1,7 @@
 # Snaplet
-An app designed as part of the Apple Foundation Program 2023 - June cohort, from Team Luminar
+An app designed as part of the Apple Foundation Program 2023 - June cohort, from Team Luminar.
 
-![Alt text](snaplet_views.jpeg?raw=true "Title")
+![Image containing all SwiftUI views from Snaplet app, demonstrating overall user flow](snaplet_views.jpeg?raw=true "Title")
 
 ## Description
 - Snaplet allows you to collaborate and exchange photos with family or friends, onto a shared collage. 
